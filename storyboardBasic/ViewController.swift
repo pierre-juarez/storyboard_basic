@@ -9,11 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  let msg = "Holaaaa"
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    print("Hola desde viewDidLoad")
+    print(msg)
   }
 
-
+  @IBAction func openAlert(_ sender: UIButton) {
+    let popup = UIAlertController(title: "Vamos de paseo👀", message: "Esta vez nos vamos de paseo🌈", preferredStyle: .alert)
+    let ok = UIAlertAction(title: "Oki🫡", style: .destructive){ (_) in
+      print("Bueno, nos vamosssss!!!✅")
+    }
+    popup.addAction(ok)
+    present(popup, animated: true, completion: nil)
+  }
+  
 }
 
